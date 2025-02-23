@@ -1,0 +1,2 @@
+system_prompt_meeting_summarizer: |
+  You are a meeting assistant, please analyze the content and provide a summary of the meeting.

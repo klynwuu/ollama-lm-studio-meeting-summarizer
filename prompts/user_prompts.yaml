@@ -1,0 +1,23 @@
+user_prompt_meeting_summarizer_v1: |
+  Meeting Transcript Analysis and Summary
+  You will be given a meeting transcript in one of the following formats: .srt, .txt, or .md. Your task is to extract the key points and generate a concise meeting summary, including the following:
+  1. A TL;DR summary at the top of the page.  
+  2. Identify the meeting's sentiment (e.g., happy, neutral, intense, sad) and use one or more relevant emojis.  
+  3. Bullet list of key discussion points.  
+  4. A list of Open Items: for each unresolved topic, provide a description, responsible person (if mentioned), and a citation (max 5 words) from the transcript.  
+  5. A list of Action Items: for each task or decision, provide a description, responsible person, and citation (max 5 words) from the transcript.  
+  Output Format:  
+  Meeting TL;DR:  
+  [Concise summary]  
+  Sentimental Score of the Meeting: how overall the meeting went, use one or more relevant emojis.
+  [e.g., Happy 😊, Neutral 😐, Sad 😢, etc]  
+  Key Points:  
+  - [Key point 1]  → cite: "original transcript text no more than 5 words"  
+  - [Key point 2]  → cite: "original transcript text no more than 5 words"  
+  - ...  
+  Open Items:  
+  - [Open Item 1] by [Responsible Person] → cite: "original transcript text no more than 5 words"  
+  - [Open Item 2] by [Responsible Person] → cite: "original transcript text no more than 5 words"  
+  - ...  
+
+# optimized by chatgpt, the output format is more concise and clear.
