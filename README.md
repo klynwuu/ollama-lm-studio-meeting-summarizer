@@ -4,7 +4,7 @@ An automated meeting summarization tool that processes transcript files and gene
 
 ## Features
 - 🕒 Automatically detects latest transcript file in target folder
-- 🤖 Supports multiple LLM backends via OpenAI-compatible API
+- 🤖 Supports Local run LLM services like LM Studio or Ollama via OpenAI-compatible API
 - 📝 Processes .txt, .srt, and .md file formats
 - 📊 Generates both clean summaries and detailed processing logs
 - ⚙️ Configurable via environment variables and prompt templates
@@ -24,19 +24,27 @@ flowchart LR
 ## Installation
 
 ```bash
+# Create and activate virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+.\venv\Scripts\activate  # Windows
 
+# Install dependencies
+pip install -r requirements.txt
 ```
 
 ## Configuration
 
 1. Create `.env` file with these variables:
 ```ini
-API_KEY=your_api_key
-LLM_SERVER_BASE_URL=https://your-llm-provider.com/v1
-LLM_MODEL=your-model-name
-TEMPERATURE=0.7
-TARGET_FOLDER=folder-with-transcripts
+API_KEY='lm-studio'
+LLM_SERVER_BASE_URL="http://localhost:1234/v1"
+LLM_MODEL="e.g.: deepseek-r1-distill-qwen-25.5b-brainstorm"
+TEMPERATURE=0.6
+TARGET_FOLDER="folder-with-transcripts"
 ```
+Feel free to read this blog post for more details: [Meeting Summarizer via LM Studio Local Run | Klyn's Space🪐](https://klynwuuxyz.montaigne.io/thoughts-from-work/meeting-summarizer-via-lm-studio-local-run)
+
 
 2. Set up prompt templates in `prompts/` directory:
 ```yaml
@@ -63,7 +71,7 @@ python meeting_summarizer_v1.py
 - Markdown files (.md)
 
 ## Dependencies
-- Python 3.8+
+- Python 3.10+ should be fine, mine is 3.11
 - See `requirements.txt` for package dependencies
 
 

@@ -588,3 +588,12 @@ MigrationBackup/
 
 # project specific
 test-target-folder/
+
+# Virtual environment
+venv/
+.env
+*.env
+
+# IDE files
+.vscode/
+.idea/
